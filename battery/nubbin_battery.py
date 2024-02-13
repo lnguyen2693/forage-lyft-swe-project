@@ -1,4 +1,5 @@
 from battery.battery import Battery
+from utils import add_year_to_date
 
 
 class NubbinBattery(Battery):
@@ -7,5 +8,5 @@ class NubbinBattery(Battery):
         self.last_service_date = last_service_date
 
     def need_service(self):
-        need_service_by = self.last_service_date.replace(year=self.last_service_date.year + 4)
+        need_service_by = add_year_to_date(self.last_service_date, 4)
         return self.curr_date > need_service_by
