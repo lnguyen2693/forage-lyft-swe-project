@@ -7,7 +7,7 @@ class Car(Serviceable):
         self.battery = battery
 
     def needs_service(self):
-        return 
+        return self.battery.need_service() or self.engine.need_service()
 
 
 # from abc import ABC, abstractmethod
